@@ -16,19 +16,19 @@ if __name__ == "__main__":
 
 class Exercise:
     def __init__():
-        Exercise.name = db.execute(f'SELECT name FROM exercises;')
-        Exercise.days = db.execute(f'SELECT days FROM exercises;')
-        Exercise.duration = db.execute(f'SELECT duration FROM exercises;')
-        Exercise.timeStart = db.execute(f'SELECT timeStart FROM exercises;')
-        Exercise.repeats = db.execute(f'SELECT repeats FROM exercises;')
+        self.name = db.execute(f'SELECT name FROM exercises;')
+        self.days = db.execute(f'SELECT days FROM exercises;')
+        self.duration = db.execute(f'SELECT duration FROM exercises;')
+        self.timeStart = db.execute(f'SELECT timeStart FROM exercises;')
+        self.repeats = db.execute(f'SELECT repeats FROM exercises;')
     def serialize_data():
         json_out = {}
         json_out['Exercise Info'] = []
         json_out['Exercise Info'].append({
-            'name' : Exercise.name,
-            'days' : Exercise.days,
-            'duration' : Exercise.duration,
-            'timeStart' : Exercise.timeStart,
-            'repeats' : Exercise.repeats
+            'name' : self.name,
+            'days' : self.days,
+            'duration' : self.duration,
+            'timeStart' : self.timeStart,
+            'repeats' : self.repeats
         })
         return json.dump(json_out)
