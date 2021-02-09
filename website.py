@@ -30,10 +30,10 @@ class Exercise:
         json_out = {}
         json_out['Exercise Info'] = []
         json_out['Exercise Info'].append({
-            'name' : self.name,
-            'days' : self.days,
-            'duration' : self.duration,
-            'timeStart' : self.timeStart,
-            'repeats' : self.repeats
+            'name' : Exercise.name,
+            'days' : Exercise.days,
+            'duration' : Exercise.duration,
+            'timeStart' : Exercise.timeStart,
+            'repeats' : Exercise.repeats
         })
         return json.dump(json_out)
