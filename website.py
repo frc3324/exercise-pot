@@ -31,5 +31,4 @@ class Exercise:
             'timeStart' : Exercise.timeStart,
             'repeats' : Exercise.repeats
         })
-        with open('exercise_info.json', 'w') as jsonFile:
-            json.dump(json_out, jsonFile)
+        return json.dump(json_out)
