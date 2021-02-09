@@ -15,12 +15,17 @@ if __name__ == "__main__":
     app.run()
 
 class Exercise:
-    def __init__(self):
-        self.name = db.execute(f'SELECT name FROM exercises;')
-        self.days = db.execute(f'SELECT days FROM exercises;')
-        self.duration = db.execute(f'SELECT duration FROM exercises;')
-        self.timeStart = db.execute(f'SELECT timeStart FROM exercises;')
-        self.repeats = db.execute(f'SELECT repeats FROM exercises;')
+    def __init__(self, name, days, duration, timeStart, repeats):
+        self.name = name
+        self.days = days
+        self.duration = duration
+        self.timeStart = timeStart
+        self.repeats = repeats
+        name = db.execute(f'SELECT name FROM exercises;')
+        days = db.execute(f'SELECT days FROM exercises;')
+        duration = db.execute(f'SELECT duration FROM exercises;')
+        timeStart = db.execute(f'SELECT timeStart FROM exercises;')
+        repeats = db.execute(f'SELECT repeats FROM exercises;')
     def serialize_data():
         json_out = {}
         json_out['Exercise Info'] = []
