@@ -15,7 +15,7 @@ if __name__ == "__main__":
     app.run()
 
 class Exercise:
-    def __init__():
+    def __init__(self):
         self.name = db.execute(f'SELECT name FROM exercises;')
         self.days = db.execute(f'SELECT days FROM exercises;')
         self.duration = db.execute(f'SELECT duration FROM exercises;')
