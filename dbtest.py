@@ -1,21 +1,9 @@
-from flask import Flask, render_template
 import sqlite3
 import json
 
-# Webserver shit
 database = sqlite3.connect('exercises.db')
 db = database.cursor()
 
-app = Flask("Exercise Pot")
-
-@app.route("/")
-def website():
-    return "Hello World!"
-
-if __name__ == "__main__":
-    app.run()
-
-# Exercise reminder and database shit
 class Exercise:
     def __init__(self, name, days, duration, timeStart, repeats):
         # IS THIS HOW YOU DO IT
