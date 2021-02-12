@@ -12,25 +12,9 @@ class Exercise(object):
         self.duration = duration
         self.timeStart = timeStart
         self.repeats = repeats
-        # Probably a horrible way to do this but idc just please god help me
-        name = db.execute(f'SELECT name FROM exercises;')
-        days = db.execute(f'SELECT days FROM exercises;')
-        duration = db.execute(f'SELECT duration FROM exercises;')
-        timeStart = db.execute(f'SELECT timeStart FROM exercises;')
-        repeats = db.execute(f'SELECT repeats FROM exercises;')
-def serialize_data():
-    json_out = {}
-    json_out['Exercise Info'] = []
-    json_out['Exercise Info'].append({
-        # Come to think of it, this might just put each of the values as "Exercise.[value]. Oh well, won't know till we try it."
-        'name' : Exercise(name),
-        'days' : Exercise(days),
-        'duration' : Exercise(duration),
-        'timeStart' : Exercise(timeStart),
-        'repeats' : Exercise(repeats)
-    })
-    # If this doesn't work so help me god I will sudo rm -rf /*
-    return json.dump(json_out)
+
+def serialize_data(exer):
+    return json.dumps(exer.__dict__)
 
 db.execute('''
 CREATE TABLE exercises(
@@ -44,4 +28,6 @@ db.execute('''
 INSERT INTO exercises(name, days, duration, timeStart, repeats)
 VALUES ("cool exercise", 3, 60, 1200, 0);
 ''')
-print(Exercise.serialize_data())
+
+exerObj = Exercise("name", ["monday"], 120, 2200, 3);
+print(serialize_data(exerObj))
