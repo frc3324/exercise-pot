@@ -50,15 +50,6 @@ VALUES ("cool exercise", 3, 60, 1200, 0);
 exerObj = Exercise("name", ["monday"], 120, 2200, 3);
 print(serialize_data(exerObj))
 
-
-db.execute('''
-CREATE TABLE exercises(
-name TEXT NOT NULL, 
-days INT NOT NULL,
-duration INT NOT NULL,
-timeStart INT NOT NULL,
-repeats INT NOT NULL);
-''')
 db.execute('''
 INSERT INTO exercises(name, days, duration, timeStart, repeats)
 VALUES ("cool exercise", 3, 60, 1200, 0);
