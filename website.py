@@ -2,22 +2,7 @@ from flask import Flask, render_template
 import sqlite3
 import json
 
-# Webserver shit
-database = sqlite3.connect('exercises.db')
-db = database.cursor()
-
-app = Flask("Exercise Pot")
-
-@app.route("/")
-def website():
-    return "Hello World!"
-
-if __name__ == "__main__":
-    app.run()
-
-# Exercise reminder and database shit
-import sqlite3
-import json
+# Database and JSON serialization shit
 
 database = sqlite3.connect('exercises.db')
 db = database.cursor()
@@ -47,3 +32,13 @@ INSERT INTO exercises(name, days, duration, timeStart, repeats)
 VALUES ("cool exercise", 3, 60, 1200, 0);
 ''')
 print(serialize_data(exerObj))
+
+# Webserver shit
+app = Flask("Exercise Pot")
+
+@app.route("/")
+def website():
+    return "Hello World!"
+
+if __name__ == "__main__":
+    app.run()
