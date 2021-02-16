@@ -18,8 +18,14 @@ def serialize_data(exer):
 
 db.execute('''
 INSERT INTO exercises(name, days, duration, timeStart, repeats)
-VALUES ("cool exercise", 3, 60, 1200, 0);
+VALUES ("cool exercise", "['monday']", 60, 1200, 0);
 ''')
 
-exerObj = Exercise("name", ["monday"], 120, 2200, 3)
+exerObj = Exercise(
+    db.execute("SELECT name FROM exercises;"), 
+    db.execute("SELECT days FROM exercises;"), 
+    db.execute("SELECT duration FROM exercises;"), 
+    db.execute("SELECT timeStart FROM exercises"), 
+    db.execute("SELECT repeats FROM exercises")
+    )
 print(serialize_data(exerObj))
