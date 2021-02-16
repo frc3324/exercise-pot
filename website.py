@@ -46,4 +46,4 @@ db.execute('''
 INSERT INTO exercises(name, days, duration, timeStart, repeats)
 VALUES ("cool exercise", 3, 60, 1200, 0);
 ''')
-print(Exercise(serialize_data()))
+print(serialize_data(exerObj))
