@@ -12,7 +12,7 @@ class Exercise(object):
         self.duration = duration
         self.timeStart = timeStart
         self.repeats = repeats
-
+    
 def serialize_data(exer):
     return json.dumps(exer.__dict__)
 
@@ -21,5 +21,5 @@ INSERT INTO exercises(name, days, duration, timeStart, repeats)
 VALUES ("cool exercise", 3, 60, 1200, 0);
 ''')
 
-exerObj = Exercise("name", ["monday"], 120, 2200, 3);
+exerObj = Exercise("name", ["monday"], 120, 2200, 3)
 print(serialize_data(exerObj))
