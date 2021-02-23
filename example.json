@@ -1,7 +1,0 @@
-{
-    "name": "Run",
-    "days": ["Monday"],
-    "duration": "60", 
-    "timeStart": "22:00",
-    "repeats": "2"
-}

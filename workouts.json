@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Run",
+        "days": [1, 3],
+        "timeStart": "22:00",
+        "timeEnd": "23:00",
+        "repeats": "2"
+    },
+    {
+        "name": "Pushup",
+        "days": [2, 4],
+        "timeStart": "20:00",
+        "timeEnd": "21:00",
+        "repeats": "2"
+    }
+]

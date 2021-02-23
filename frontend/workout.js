@@ -10,14 +10,15 @@ request.onload = function() {
 
 function loadPage(json) {
     const header = document.getElementById("name");
-    header.innerHTML = json['name'];
+    header.innerHTML = "Workout: " + json['name'];
 
     const daysElem = document.getElementById("days");
     const days = json['days'];
     console.log(days);
     days.forEach(function(day) {
-        const dayElem = document.createElement('p');
-        dayElem.innerHTML = day;
+        const dayElem = document.createElement('li');
+        const dayTextNode = document.createTextNode(day); 
+        dayElem.appendChild(dayTextNode);
         daysElem.appendChild(dayElem);
     });
 }
