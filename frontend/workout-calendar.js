@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     calendar.render();
 
-    let requestURL = 'http://127.0.0.1:8000/workouts.json';
+    let workoutName = prompt("Enter workout name", "base");
+    let requestURL = 'http://127.0.0.1:5000/' + workoutName + ".json";
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';

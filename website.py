@@ -1,11 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
+from flask_cors import CORS
+
 import sqlite3
 import json
 
 # Database and JSON serialization shit
-
-database = sqlite3.connect('exercises.db')
-db = database.cursor()
 
 class Exercise(object):
     def __init__(self, name, days, duration, timeStart, repeats):
@@ -16,29 +15,32 @@ class Exercise(object):
         self.timeStart = timeStart
         self.repeats = repeats
 
-def serialize_data(exer):
-    return json.dumps(exer.__dict__)
-
-db.execute('''
-INSERT INTO exercises(name, days, duration, timeStart, repeats)
-VALUES ("cool exercise", 3, 60, 1200, 0);
-''')
-
-exerObj = Exercise("name", ["monday"], 120, 2200, 3)
-print(serialize_data(exerObj))
-
-db.execute('''
-INSERT INTO exercises(name, days, duration, timeStart, repeats)
-VALUES ("cool exercise", 3, 60, 1200, 0);
-''')
-print(serialize_data(exerObj))
+    def serialize_data(self):
+        return json.dumps(self.__dict__)
 
 # Webserver shit
 app = Flask("Exercise Pot")
+CORS(app)
 
-@app.route("/")
-def website():
-    return "Hello World!"
+@app.route("/easy.json")
+def easy():
+    return open('easy.json', 'r').read()
+
+@app.route("/med.json")
+def med():
+    return open('med.json', 'r').read()
+
+@app.route("/workout/<path:path>")
+def workout(path):
+    return "Ok " + path
+
+@app.route("/index.html")
+def index():
+    return open('frontend/workout-calendar.html', 'r').read()
+
+@app.route('/frontend/<path:path>')
+def frontend(path):
+    return send_from_directory('frontend', path)
 
 if __name__ == "__main__":
     app.run()
