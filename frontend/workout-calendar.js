@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.render();
 
     let workoutName = prompt("Enter workout name", "base");
-    let requestURL = 'http://127.0.0.1:5000/' + workoutName + ".json";
+    let requestURL = window.location.origin + "/" + workoutName + ".json";
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';

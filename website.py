@@ -34,7 +34,7 @@ def med():
 def workout(path):
     return "Ok " + path
 
-@app.route("/index.html")
+@app.route("/")
 def index():
     return open('frontend/workout-calendar.html', 'r').read()
 
@@ -43,4 +43,4 @@ def frontend(path):
     return send_from_directory('frontend', path)
 
 if __name__ == "__main__":
-    app.run()
+    app.run("0.0.0.0", 80)
