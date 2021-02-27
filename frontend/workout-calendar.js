@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var calendar = new FullCalendar.Calendar(calendarEl, {
         eventClick: function(info) {
             console.log('Event: ' + info.event.title);
-            let loc = 'workout/' + info.event.title
+            let loc = 'workout/' + info.event.title + "?" + "title=" + info.event.title + "&" + "startTime=" + info.event.startTime + "&" + "endTime=" + info.event.endTime;
             window.location.href = loc;
         },
         initialView: 'dayGridWeek',
