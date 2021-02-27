@@ -9,7 +9,7 @@ import json
 class Exercise(object):
     def __init__(self, name, days, duration, timeStart, repeats):
         # IS THIS HOW YOU DO IT
-        self.name = name
+        self.name = name 
         self.days = days
         self.duration = duration
         self.timeStart = timeStart
@@ -30,9 +30,9 @@ def easy():
 def med():
     return open('med.json', 'r').read()
 
-@app.route("/workout/<path:path>")
-def workout(path):
-    return "Ok " + path
+@app.route("/workout.html")
+def workout():
+    return open('frontend/workout.html', 'r').read()
 
 @app.route("/")
 def index():
@@ -43,4 +43,4 @@ def frontend(path):
     return send_from_directory('frontend', path)
 
 if __name__ == "__main__":
-    app.run("0.0.0.0", 80)
+    app.run("0.0.0.0", 5000)

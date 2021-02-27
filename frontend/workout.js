@@ -1,24 +1,28 @@
-let requestURL = 'http://127.0.0.1:8000/example.json';
-let request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
-request.onload = function() {
-  const json = request.response;
-  loadPage(json);
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
 }
 
-function loadPage(json) {
-    const header = document.getElementById("name");
-    header.innerHTML = "Workout: " + json['name'];
+let title = findGetParameter("title")
+let timeStart = new Date(findGetParameter("startTime"));
+let timeEnd = new Date(findGetParameter("endTime"));
+let diff = (timeEnd - timeStart)/3.6e+6
 
-    const daysElem = document.getElementById("days");
-    const days = json['days'];
-    console.log(days);
-    days.forEach(function(day) {
-        const dayElem = document.createElement('li');
-        const dayTextNode = document.createTextNode(day); 
-        dayElem.appendChild(dayTextNode);
-        daysElem.appendChild(dayElem);
-    });
-}
+window.addEventListener('DOMContentLoaded', (event) => {
+    const titleElement = document.getElementById("title");
+    titleElement.innerHTML = "Workout: " + title;
+
+    const dayElement = document.getElementById("day");
+    dayElement.innerHTML = "Day: " + timeStart.toLocaleString('en-us', {  weekday: 'long' });
+
+    const timeEndElement = document.getElementById("duration");
+    timeEndElement.innerHTML = "Duration: " + diff + " Hour(s)";
+});
