@@ -38,6 +38,11 @@ def workout():
 def index():
     return open('frontend/workout-calendar.html', 'r').read()
 
+
+@app.route('/<path:path>')
+def dir(path):
+    return send_from_directory('.', path)
+
 @app.route('/frontend/<path:path>')
 def frontend(path):
     return send_from_directory('frontend', path)

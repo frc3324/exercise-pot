@@ -25,21 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         customButtons: {
             addEventButton: {
-                text: 'add event...',
+                text: 'Go to leaderboard',
                 click: function() {
-                    var dateStr = prompt('Enter a time in 24:00 hour format:');
-                    var day = prompt('Enter what day ');
-
-                    if (!isNaN(date.valueOf())) { // valid?
-                      calendar.addEvent({
-                        title: 'dynamic event',
-                        start: date,
-                        allDay: true
-                      });
-                      alert('Great. Now, update your database...');
-                } else {
-                      alert('Invalid date.');
-                }
+                    window.location.href = 'frontend/leaderboard.html'
               }
             }
           }
@@ -57,5 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(json);
       renderEvents(calendar, json);
     }
+
+    window.onload = setTimeout(function(){
+        prompt('Time to do desk pushups! Enter "done" when done or "skip" to skip this workout');
+        alert('+10 points! Check the leaderboard to see where you stand');
+    }, 5000);
 });
 

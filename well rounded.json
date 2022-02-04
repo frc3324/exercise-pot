@@ -1,0 +1,115 @@
+[
+    {
+        "name": "Knee to Chest Stretch",
+        "days": [1, 3, 5],
+        "timeStart": "9:00",
+        "timeEnd": "10:00",
+        "repeats": "2"
+    },
+    {
+        "name": "Arm Circles",
+        "days": [1, 3, 5],
+        "timeStart": "10:00",
+        "timeEnd": "11:00",
+        "repeats": "2"
+    },
+    {
+        "name": "Office Walk",
+        "days": [1, 3, 5],
+        "timeStart": "11:00",
+        "timeEnd": "12:00",
+        "repeats": "2"
+    },
+   {
+        "name": "Desk Push-Ups",
+        "days": [1, 3, 5],
+        "timeStart": "12:00",
+        "timeEnd": "13:00",
+        "repeats": "2"
+    },
+{
+        "name": "Seated Bicycle Crunches",
+        "days": [1, 3, 5],
+        "timeStart": "13:00",
+        "timeEnd": "14:00",
+        "repeats": "2"
+    },
+{
+        "name": "Wall Sits",
+        "days": [1, 3, 5],
+        "timeStart": "14:00",
+        "timeEnd": "15:00",
+        "repeats": "2"
+    },
+ {
+        "name": "Hamstring Stretches",
+        "days": [1, 3, 5],
+        "timeStart": "15:00",
+        "timeEnd": "16:00",
+        "repeats": "2"
+    },
+{
+        "name": "Office Walk x2",
+        "days": [1, 3, 5],
+        "timeStart": "16:00",
+        "timeEnd": "17:00",
+        "repeats": "2"
+    },
+    {
+        "name": "Hamstring Stretches",
+        "days": [2, 4],
+        "timeStart": "9:00",
+        "timeEnd": "10:00",
+        "repeats": "2"
+    },
+    {
+        "name": "Chair Squats",
+        "days": [2, 4],
+        "timeStart": "10:00",
+        "timeEnd": "11:00",
+        "repeats": "2"
+    },
+    {
+        "name": "Standing Rear Pulses",
+        "days": [2, 4],
+        "timeStart": "11:00",
+        "timeEnd": "12:00",
+        "repeats": "2"
+    },
+   {
+        "name": "Calf Raises",
+        "days": [2, 4],
+        "timeStart": "12:00",
+        "timeEnd": "13:00",
+        "repeats": "2"
+    },
+{
+        "name": "Lunges",
+        "days": [2, 4],
+        "timeStart": "13:00",
+        "timeEnd": "14:00",
+        "repeats": "2"
+    },
+{
+        "name": "Office Walk",
+        "days": [2,4],
+        "timeStart": "14:00",
+        "timeEnd": "15:00",
+        "repeats": "2"
+    },
+ {
+        "name": "Oblique Twists",
+        "days": [2,4],
+        "timeStart": "15:00",
+        "timeEnd": "16:00",
+        "repeats": "2"
+    },
+{
+        "name": "Jumping Jacks",
+        "days": [2,4],
+        "timeStart": "16:00",
+        "timeEnd": "17:00",
+        "repeats": "2"
+    }
+]
+
